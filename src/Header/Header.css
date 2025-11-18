@@ -1,0 +1,108 @@
+/* --- Base Header Layout --- */
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 40px;
+    height: 80px; 
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); 
+    background-color: white;
+    position: sticky; 
+    top: 0;
+    z-index: 100; 
+}
+
+/* --- Logo Styling --- */
+.Header h1, .Header > h1 > span {
+    font-family: 'Arial Black', sans-serif; 
+    font-size: 28px; 
+    font-weight: 900;
+    cursor: pointer;
+}
+.Header > h1 > span {
+    color: #ff0000; 
+    transition: color 0.3s ease;
+}
+
+
+
+/* --- Navigation Links Styling --- */
+.Links > ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; 
+    font-weight: 600; 
+    font-size: 16px; 
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+.Links li {
+    cursor: pointer;
+    position: relative;
+    padding: 5px 0; 
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.Links li::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%; 
+    transform: translateX(-50%);
+    width: 0; 
+    height: 2px;
+    background-color: #ff0000;
+    transition: width 0.3s ease; 
+}
+
+.Links li:hover {
+    color: #000; 
+}
+
+.Links li:hover::after {
+    width: 100%; 
+}
+
+/* --- Icons Action Styling --- */
+.IconsAction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px; 
+}
+
+.IconsAction > i {
+    font-size: 22px;
+    position: relative;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease-in-out; 
+}
+
+.IconsAction > i:hover {
+    color: #ff0000; 
+}
+
+.nbcart {
+    position: absolute;
+    top: -5px; 
+    right: -8px; 
+    width: 16px; 
+    height: 16px;
+    font-size: 10px; 
+    font-weight: 700;
+    text-align: center;
+    line-height: 16px;
+    background: #ff0000;
+    color: white;
+    border-radius: 100%;
+    z-index: 1; 
+}
+
+
+.fa-bars {
+    display: none;
+}

@@ -1,0 +1,135 @@
+
+.product-card {
+    
+    width: 30%; /* Will be managed by a parent Flex/Grid container */
+    overflow: hidden; /* Important for containing image and hidden elements */
+    text-align: center;
+    background-color: #ffffff;
+    border: 0.2px solid #b6b6b6;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.219); /* Optional subtle shadow */
+    transition: box-shadow 0.3s ease;
+}
+
+/* Optional: Add a slight lift/shadow on hover */
+.product-card:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    width: 100%;
+    height: auto; /* Adjust as needed, or use aspect-ratio */
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 1/1;
+    /* Use padding-bottom trick for fixed aspect ratio if necessary */
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover; /* Ensures image covers the area without stretching */
+}
+
+/* --- Product Details (Name and Price) --- */
+
+.product-details {
+    padding: 15px 10px;
+    text-align: center;
+}
+
+.product-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.product-price {
+    font-size: 16px;
+    font-weight: 700;
+    color: #222;
+    margin: 0;
+}
+
+/* --- Cart Actions (The key part of the design) --- */
+
+.cart-actions {
+    position: absolute;
+    bottom: 0; /* Positioned at the bottom of the card */
+    left: 0;
+    right: 0;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start; /* Aligns main button to the left */
+    align-items: center;
+    background: rgba(0, 0, 0, 0.85); /* Dark, semi-transparent background */
+    
+    /* Initially hide or move off-screen */
+    transform: translateY(100%); 
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Show actions bar on card hover */
+.product-card:hover .cart-actions {
+    transform: translateY(0); /* Slides up into view */
+    opacity: 1;
+}
+
+/* --- Individual Action Buttons --- */
+
+.cart-actions button {
+    height: 100%;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: background-color 0.2s;
+}
+
+/* Primary "Add to Cart" Button */
+.add-to-cart {
+    flex-grow: 1; /* Takes up most of the space */
+    background: rgba(0, 0, 0, 0.9);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.add-to-cart span {
+    margin-left: 8px; /* Space between icon and text */
+}
+
+.add-to-cart:hover {
+    background: #222; /* Slightly darker or main brand color */
+}
+
+/* Secondary Action Buttons (Wishlist, Quick View) */
+.add-to-wishlist,
+.add-to-quick-view {
+    width: 50px; /* Fixed width for icon buttons */
+    flex-shrink: 0;
+    background: transparent;
+}
+
+.add-to-wishlist {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.add-to-wishlist:hover,
+.add-to-quick-view:hover {
+    background: #222;
+}
+
+/* Icon Styling */
+.cart-actions i {
+    font-size: 16px;
+}
