@@ -28,9 +28,7 @@ The project simulates an online fashion store with product listing, category fil
 ## 📸 Screenshots
 
 ![SAIDSHOP Screenshot1](./public/img1.png)
-![SAIDSHOP Screenshot2](./public/img2.png)
 
-> *(You can add a screenshot of your project here)*
 
 ---
 
