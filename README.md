@@ -27,7 +27,8 @@ The project simulates an online fashion store with product listing, category fil
 
 ## 📸 Screenshots
 
-![SAIDSHOP Screenshot](./screenshot.png)
+![SAIDSHOP Screenshot1](./public/img1.png)
+![SAIDSHOP Screenshot2](./public/img2.png)
 
 > *(You can add a screenshot of your project here)*
 
@@ -49,4 +50,4 @@ The project simulates an online fashion store with product listing, category fil
 ## 👨‍💻 Author
 
 - Said Bougair
-- GitHub: https://github.com/your-username
+- GitHub: https://github.com/bougairsaid8
