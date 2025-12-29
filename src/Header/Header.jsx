@@ -5,7 +5,7 @@ function Header() {
   return (
     <div className='Header'>
         {/* logo for website */}
-        <h1><span>FASHION</span>PRO</h1>
+        <h1><span>SAID</span>SHOP</h1>
 
         {/* links for this website */}
         <div className='Links'>

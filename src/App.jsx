@@ -1,4 +1,4 @@
-import React ,{useContext} from 'react';
+import React ,{useContext,useState} from 'react';
 import {context} from './context/context'
 import './App.css'
 import Header from './Header/Header';
@@ -42,10 +42,7 @@ import blackOxfords from "./assets/black_oxfords.jpg";
 
 
 function App() {
-  // ------------------------------------------------
-  // 2. استخدام المتغيرات المستوردة في خاصية "image"
-  // ------------------------------------------------
-
+    const [filter,setFilter]=useState(null)
   const list = [
     {
         "id": 1,
@@ -369,8 +366,8 @@ function App() {
     <Header/>
     <Cover/>
     <div className='body'>
-      <Filter/>
-      <Content/>
+      <Filter filter={filter} setFilter={setFilter}/>
+      <Content filter={filter}/>
     </div>
     </context.Provider>
   )
