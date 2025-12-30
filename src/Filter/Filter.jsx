@@ -37,7 +37,7 @@ function Filter({ filter,setFilter }) {
         <ul>
           <li 
           onClick={()=>setFilter(f => ({...f,PRICE:{min:10,max:20}}))}
-          className={filter?.PRICE.min===10?"filterActive":""}
+          className={filter?.PRICE?.min===10?"filterActive":""}
           >
             <span>$10 to $20</span>{" "}
             <span>
@@ -46,7 +46,7 @@ function Filter({ filter,setFilter }) {
           </li>
           <li
           onClick={()=>setFilter(f => ({...f,PRICE:{min:20,max:30}}))}
-          className={filter?.PRICE.min===20?"filterActive":""}
+          className={filter?.PRICE?.min===20?"filterActive":""}
           >
             <span>$20 to $30</span>{" "}
             <span>
@@ -55,7 +55,7 @@ function Filter({ filter,setFilter }) {
           </li>
           <li
           onClick={()=>setFilter(f => ({...f,PRICE:{min:30,max:40}}))}
-          className={filter?.PRICE.min===30?"filterActive":""}
+          className={filter?.PRICE?.min===30?"filterActive":""}
           >
             <span>$30 to $40</span>{" "}
             <span>
@@ -64,7 +64,7 @@ function Filter({ filter,setFilter }) {
           </li>
           <li
           onClick={()=>setFilter(f => ({...f,PRICE:{min:40,max:50}}))}
-          className={filter?.PRICE.min===40?"filterActive":""}
+          className={filter?.PRICE?.min===40?"filterActive":""}
           >
             <span>$40 to $50</span>{" "}
             <span>
@@ -73,7 +73,7 @@ function Filter({ filter,setFilter }) {
           </li>
           <li
           onClick={()=>setFilter(f => ({...f,PRICE:{min:50,max:100}}))}
-          className={filter?.PRICE.min===50?"filterActive":""}
+          className={filter?.PRICE?.min===50?"filterActive":""}
           >
             <span>$50 to $100</span>{" "}
             <span>
@@ -82,7 +82,7 @@ function Filter({ filter,setFilter }) {
           </li>
           <li
           onClick={()=>setFilter(f => ({...f,PRICE:{min:100,max:200}}))}
-          className={filter?.PRICE.min===100?"filterActive":""}
+          className={filter?.PRICE?.min===100?"filterActive":""}
           >
             <span>$100 to $200</span>{" "}
             <span>({list.filter((j) => j.price >= 100).length})</span>
@@ -114,9 +114,9 @@ function Filter({ filter,setFilter }) {
         <h1>RECENT PRODUCTS</h1>
 
         <ul>
-          {list.slice(list.length - 3, list.length).map((item) => {
+          {list.slice(list.length - 3, list.length).map((item,i) => {
             return (
-              <li>
+              <li key={i}>
                 <div className="product-image-filter">
                   <img src={item.image} alt={item.name} />
                 </div>
